@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: 'dist/material-ui',
   bundledWebRuntime: false,
   server: {
-    url: 'http://192.168.1.10:4200',
+    url: 'http://192.168.1.4:4200', // local ip for live reload
     cleartext: true
   }
 };

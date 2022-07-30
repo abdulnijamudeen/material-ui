@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCommonModule } from '@angular/material/core';
 
 const MATERIAL_UI = [
+  MatCommonModule,
   MatButtonModule
 ]
 

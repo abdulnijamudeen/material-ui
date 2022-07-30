@@ -7,6 +7,7 @@ import { GetStartedComponent } from './get-started/get-started.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialUiModule } from './material-ui/material-ui.module';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,
-    MaterialUiModule
+    MaterialUiModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
