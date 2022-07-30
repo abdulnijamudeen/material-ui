@@ -8,11 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialUiModule } from './material-ui/material-ui.module';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomePageComponent } from './home-page/home-page.component';
+import { HomeComponent } from './home-page/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetStartedComponent
+    GetStartedComponent,
+    HomePageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
