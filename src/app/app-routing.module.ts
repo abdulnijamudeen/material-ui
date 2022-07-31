@@ -1,3 +1,4 @@
+import { UserComponent } from './home-page/user/user.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { GetStartedComponent } from './get-started/get-started.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'user',
+        component: UserComponent
       }
     ]
   },

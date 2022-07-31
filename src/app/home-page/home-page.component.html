@@ -1,17 +1,18 @@
 <mat-drawer-container fxFill>
   <mat-drawer #drawer [mode]="'over'" style="width: 15rem;">
-    <mat-list>
-      <mat-list-item>Menu</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item> <mat-icon style="padding-right: 1rem;">home</mat-icon> Home</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item> <mat-icon style="padding-right: 1rem;">exit_to_app</mat-icon> Exit</mat-list-item>
-    </mat-list>
+    <mat-selection-list [multiple]="false">
+      <mat-list-option routerLink="home-page" (click)="drawer.close()">
+        <mat-icon mat-list-icon>home</mat-icon>Home
+      </mat-list-option>
+      <mat-list-option routerLink="user" (click)="drawer.close()">
+        <mat-icon mat-list-icon>person</mat-icon>User
+      </mat-list-option>
+    </mat-selection-list>
   </mat-drawer>
   <mat-drawer-content>
     <mat-toolbar color="primary" div fxLayout="row" fxLayoutAlign="space-between center">
       <mat-icon (click)="drawer.toggle()" aria-hidden="false" aria-label="Example home icon" fontIcon="menu" style="padding-right: 1rem;"></mat-icon>
-      <span>Home</span>
+      <span>Application Name</span>
       <button mat-icon-button aria-label="Example icon-button with a menu">
         <mat-icon>settings</mat-icon>
       </button>

@@ -42,3 +42,8 @@ testem.log
 Thumbs.db
 android
 .vscode
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
