@@ -5,10 +5,10 @@ const config: CapacitorConfig = {
   appName: 'material-ui',
   webDir: 'dist/material-ui',
   bundledWebRuntime: false,
-  server: {
+  /* server: {
     url: 'http://192.168.1.4:4200', // local ip for live reload
     cleartext: true
-  }
+  } */
 };
 
 export default config;

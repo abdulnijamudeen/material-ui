@@ -1,10 +1,7 @@
 <mat-toolbar color="primary" fxLayoutAlign="space-between center">
   <mat-icon style="margin-right: 0.5rem;">person</mat-icon>
   User
-  <!-- <button mat-mini-fab color="accent">
-    <mat-icon>add</mat-icon>
-  </button> -->
-  <mat-icon style="margin-right: 0.5rem;">more_vert</mat-icon>
+  <mat-icon style="margin-right: 0.5rem;" (click)="back()">arrow_back</mat-icon>
 </mat-toolbar>
 <div style="padding: 1rem;" fxLayout="column" fxLayoutGap="0.5rem">
   <mat-card fxLayout="column" fxLayoutAlign="center center">
@@ -18,17 +15,25 @@
     <mat-form-field appearance="fill" fxFill>
       <mat-label>Role</mat-label>
       <input matInput type="text" [(ngModel)]="form.role">
-      <button *ngIf="form.name" matSuffix mat-icon-button aria-label="Clear" (click)="form.role=''">
+      <button *ngIf="form.role" matSuffix mat-icon-button aria-label="Clear" (click)="form.role=''">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
-    <button mat-raised-button (click)="addUser()" color="primary" [disabled]="!form.name || !form.role">Add</button>
+    <div>
+      <button mat-raised-button (click)="saveUser()" color="primary" [disabled]="!form.name || !form.role" style="margin-right: 0.5rem;">Save</button>
+      <button mat-raised-button (click)="clearForm()" color="primary" [disabled]="!form.name && !form.role">Clear</button>
+    </div>
   </mat-card>
   <mat-card *ngFor="let user of users" fxLayout="row" fxLayoutAlign="space-between center">
     <span>{{user.name}}</span>
     <span>{{user.role}}</span>
-    <button mat-mini-fab color="warn" (click)="deleteUser(user)">
-      <mat-icon>delete</mat-icon>
-    </button>
+    <div>
+      <button mat-icon-button color="primary" (click)="editUser(user)" style="margin-right: 0.5rem;">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteUser(user)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
   </mat-card>
 </div>
