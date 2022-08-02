@@ -25,13 +25,13 @@
     </div>
   </mat-card>
   <mat-card *ngFor="let user of users" fxLayout="row" fxLayoutAlign="space-between center">
-    <span>{{user.name}}</span>
-    <span>{{user.role}}</span>
+    <span>{{user.data.name}}</span>
+    <span>{{user.data.role}}</span>
     <div>
-      <button mat-icon-button color="primary" (click)="editUser(user)" style="margin-right: 0.5rem;">
+      <button mat-icon-button color="primary" (click)="editUser(user.id)" style="margin-right: 0.5rem;">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" (click)="deleteUser(user)">
+      <button mat-icon-button color="warn" (click)="deleteUser(user.id)">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

@@ -1,6 +1,6 @@
 import { UserService } from './../../service/user.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model';
+import { Doc, User } from 'src/app/model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -15,7 +15,8 @@ export class UserComponent implements OnInit {
     name: '',
     role: ''
   }
-  users: User[] = [];
+  docId: string = '';
+  users: Doc<User>[] = [];
 
   constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
 
@@ -25,7 +26,7 @@ export class UserComponent implements OnInit {
 
   saveUser() {
     if (this.form.id) {
-      this.userService.update(this.form.id, this.form).then(v => {
+      this.userService.update(this.docId, this.form).then(v => {
         this.clearForm();
         this._snackBar.open('Saved successfully', undefined, { duration: 2000 });
       });
@@ -37,14 +38,17 @@ export class UserComponent implements OnInit {
     }
   }
 
-  deleteUser(user: User) {
-    this.userService.delete(user.id).then(() => {
+  deleteUser(docId: string) {
+    this.userService.delete(docId).then(() => {
       this._snackBar.open('Deleted successfully', undefined, { duration: 2000 });
     })
   }
 
-  editUser(user: User) {
-    this.userService.get(user.id).subscribe(res => this.form = res);
+  editUser(docId: string) {
+    this.userService.get(docId).subscribe(res => {
+      this.docId = res.id;
+      this.form = res.data;
+    });
   }
 
   getAllUser() {
