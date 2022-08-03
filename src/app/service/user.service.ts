@@ -1,7 +1,8 @@
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Injectable } from '@angular/core';
-import { Doc, User } from '../model';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { map } from 'rxjs';
+import { Doc, User } from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class UserService {
 
   path = 'user';
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore, private storage: AngularFireStorage) { }
 
   add(user: User) {
     user.id = this.afs.createId();
@@ -32,5 +33,14 @@ export class UserService {
 
   update(docId: string, user: User) {
     return this.afs.collection<User>(this.path).doc(docId).update(user);
+  }
+
+  upload(file: File) {
+    const filePath = `${this.path}/${new Date().getTime()}.${file.type.split('/')[1]}`;
+    return this.storage.upload(filePath, file);
+  }
+
+  download(filePath: string) {
+    return this.storage.ref(filePath).getDownloadURL();
   }
 }

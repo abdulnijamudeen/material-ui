@@ -1,7 +1,7 @@
-import { UserService } from './../../service/user.service';
 import { Component, OnInit } from '@angular/core';
-import { Doc, User } from 'src/app/model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Doc, User } from 'src/app/model';
+import { UserService } from './../../service/user.service';
 
 @Component({
   selector: 'app-user',
@@ -17,11 +17,12 @@ export class UserComponent implements OnInit {
   }
   docId: string = '';
   users: Doc<User>[] = [];
+  imgUrl: string = ''
 
   constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getAllUser();
+    // this.getAllUser();
   }
 
   saveUser() {
@@ -53,6 +54,21 @@ export class UserComponent implements OnInit {
 
   getAllUser() {
     this.userService.getAll().subscribe(res => this.users = [...res]);
+  }
+
+  upload(file?: File) {
+    if (file) {
+      /*  this.userService.upload(file).then(res => {
+         this._snackBar.open(`Uploaded successfully: ${res.ref.fullPath}`, undefined, { duration: 2000 });
+         // this.download(res.ref.fullPath);
+       }); */
+    }
+  }
+
+  download(filePath: string) {
+    this.userService.download(filePath).subscribe(res => {
+      this.imgUrl = res as string;
+    });
   }
 
   clearForm() {
