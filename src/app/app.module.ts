@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -31,6 +32,7 @@ import { MaterialUiModule } from './material-ui/material-ui.module';
     BrowserAnimationsModule,
     FormsModule,
     CommonModule,
+    HttpClientModule,
     MaterialUiModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
