@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Doc, User } from 'src/app/model';
 import { SidemenuService } from 'src/app/service/sidemenu.service';
-import { UserService } from './../../service/user.service';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-user',

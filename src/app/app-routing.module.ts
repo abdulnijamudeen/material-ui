@@ -1,9 +1,8 @@
-import { UserComponent } from './home-page/user/user.component';
-import { HomeComponent } from './home-page/home/home.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { GetStartedComponent } from './get-started/get-started.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -11,22 +10,16 @@ const routes: Routes = [
     component: GetStartedComponent
   },
   {
-    path: 'home-page',
-    component: HomePageComponent,
-    children: [
-      {
-        path: '',
-        component: HomeComponent
-      },
-      {
-        path: 'user',
-        component: UserComponent
-      }
-    ]
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'user',
+    component: UserComponent
   },
   {
     path: '**',
-    redirectTo: 'home-page',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

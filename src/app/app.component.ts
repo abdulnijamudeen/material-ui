@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { App, BackButtonListenerEvent } from '@capacitor/app';
 import { ActionPerformed, PushNotifications, PushNotificationSchema, Token } from '@capacitor/push-notifications';
 import { Toast } from '@capacitor/toast';
+import { SidemenuService } from './service/sidemenu.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,10 @@ import { Toast } from '@capacitor/toast';
 })
 export class AppComponent implements OnInit {
   title = 'material-ui';
-  constructor() {
+
+  @ViewChild('drawer') drawer!: MatDrawer;
+
+  constructor(private sidemenuService: SidemenuService) {
     App.addListener('backButton', (event: BackButtonListenerEvent) => {
       if (!event.canGoBack) {
         App.exitApp();
@@ -18,6 +23,7 @@ export class AppComponent implements OnInit {
         window.history.back();
       }
     });
+    this.sidemenuService.sideMenu$.subscribe(() => this.drawer.toggle());
   }
 
   ngOnInit() {
@@ -69,5 +75,10 @@ export class AppComponent implements OnInit {
         });
       },
     ); */
+  }
+
+  onSwipeleft() {
+    console.log('swipe');
+    // this.drawer.close();
   }
 }
