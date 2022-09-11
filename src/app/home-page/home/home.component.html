@@ -1,5 +1,9 @@
-<mat-toolbar color="primary" fxLayoutAlign="center center">
-  <mat-icon style="margin-right: 0.5rem;">home</mat-icon> Home
+<mat-toolbar color="primary" div fxLayout="row" fxLayoutAlign="space-between center">
+  <mat-icon (click)="toggle()" aria-hidden="false" aria-label="Example home icon" fontIcon="menu" style="padding-right: 1rem;"></mat-icon>
+  <span>Home</span>
+  <button mat-icon-button aria-label="Example icon-button with a menu">
+    <mat-icon>settings</mat-icon>
+  </button>
 </mat-toolbar>
 <mat-card fxLayout="column" fxLayoutAlign="center center" style="margin: 1rem;">
   <mat-card-title>FCM client</mat-card-title>
@@ -32,4 +36,5 @@
     </button>
   </mat-form-field>
   <button mat-raised-button (click)="send()" color="primary">Send</button>
+  <button mat-raised-button (click)="toggle()" color="warn">Toggle Side Menu</button>
 </mat-card>

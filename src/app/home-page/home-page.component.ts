@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { SidemenuService } from '../service/sidemenu.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('drawer')
+  drawer!: MatDrawer;
+
+  constructor(private sidemenuService: SidemenuService) {
+    this.sidemenuService.sideMenu$.subscribe(() => this.drawer.toggle());
+  }
 
   ngOnInit(): void {
   }

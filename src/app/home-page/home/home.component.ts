@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { SidemenuService } from 'src/app/service/sidemenu.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   body = 'Dummy Message';
   authKey = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private sidemenuService: SidemenuService) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +40,10 @@ export class HomeComponent implements OnInit {
     }).subscribe(res => {
       console.log('Push alert success: ' + res);
     });
+  }
+
+  toggle() {
+    this.sidemenuService.toggle();
   }
 
 }

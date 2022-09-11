@@ -1,7 +1,9 @@
-<mat-toolbar color="primary" fxLayoutAlign="space-between center">
-  <mat-icon style="margin-right: 0.5rem;">person</mat-icon>
-  User
-  <mat-icon style="margin-right: 0.5rem;" (click)="back()">arrow_back</mat-icon>
+<mat-toolbar color="primary" div fxLayout="row" fxLayoutAlign="space-between center">
+  <mat-icon (click)="toggle()" aria-hidden="false" aria-label="Example home icon" fontIcon="menu" style="padding-right: 1rem;"></mat-icon>
+  <span>User</span>
+  <button mat-icon-button aria-label="Example icon-button with a menu">
+    <mat-icon (click)="back()">arrow_back</mat-icon>
+  </button>
 </mat-toolbar>
 <div style="padding: 1rem;" fxLayout="column" fxLayoutGap="0.5rem">
   <mat-card fxLayout="column" fxLayoutAlign="center center">

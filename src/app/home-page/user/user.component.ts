@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Doc, User } from 'src/app/model';
+import { SidemenuService } from 'src/app/service/sidemenu.service';
 import { UserService } from './../../service/user.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class UserComponent implements OnInit {
   users: Doc<User>[] = [];
   imgUrl: string = ''
 
-  constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
+  constructor(private userService: UserService, private _snackBar: MatSnackBar, private sidemenuService: SidemenuService) { }
 
   ngOnInit(): void {
     // this.getAllUser();
@@ -79,5 +80,9 @@ export class UserComponent implements OnInit {
 
   back() {
     window.history.back();
+  }
+
+  toggle() {
+    this.sidemenuService.toggle();
   }
 }
