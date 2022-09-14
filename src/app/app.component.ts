@@ -78,7 +78,6 @@ export class AppComponent implements OnInit {
   }
 
   onSwipeleft() {
-    console.log('swipe');
-    // this.drawer.close();
+    this.drawer.close();
   }
 }
