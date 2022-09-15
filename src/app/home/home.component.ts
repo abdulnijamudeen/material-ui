@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
         "mutable_content": true,
         "sound": "Tri-tone"
       }
-    },{
+    }, {
       headers: {
         "Authorization": this.authKey,
         "Content-Type": 'application/json'

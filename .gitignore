@@ -47,3 +47,4 @@ android
 .firebase
 *-debug.log
 .runtimeconfig.json
+.vscode/
