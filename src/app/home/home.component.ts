@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SidemenuService } from 'src/app/service/sidemenu.service';
 
@@ -20,26 +20,6 @@ export class HomeComponent implements OnInit {
   }
 
   send() {
-    let headers = new HttpHeaders();
-    headers.set('Authorization', this.authKey);
-    headers.set('Content-Type', 'application/json');
-
-    this.http.post('https://fcm.googleapis.com/fcm/send', {
-      "to": this.to,
-      "notification": {
-        "title": this.title,
-        "body": this.body,
-        "mutable_content": true,
-        "sound": "Tri-tone"
-      }
-    }, {
-      headers: {
-        "Authorization": this.authKey,
-        "Content-Type": 'application/json'
-      }
-    }).subscribe(res => {
-      console.log('Push alert success: ' + res);
-    });
   }
 
   toggle() {
