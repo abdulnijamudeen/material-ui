@@ -13,14 +13,8 @@ export class AppComponent implements OnInit {
   @ViewChild('drawer') drawer!: MatDrawer;
 
   constructor(private sidemenuService: SidemenuService) {
-    App.addListener('backButton', (event: BackButtonListenerEvent) => {
-      if (!event.canGoBack) {
-        App.exitApp();
-      } else {
-        window.history.back();
-      }
-    });
-    this.sidemenuService.sideMenu$.subscribe(() => this.drawer.toggle());
+    App.addListener('backButton', (event: BackButtonListenerEvent) => event.canGoBack ? window.history.back() : App.exitApp());
+    this.sidemenuService.sideMenu$.subscribe(() => this.drawer.opened ? this.drawer.close() : this.drawer.open());
   }
 
   ngOnInit() {

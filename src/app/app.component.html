@@ -1,20 +1,20 @@
 <mat-drawer-container fxFill>
 
-  <mat-drawer #drawer [mode]="'push'" class="w-18rem border-round-right-2xl">
+  <mat-drawer #drawer [mode]="'over'" class="w-18rem border-round-right-2xl">
     <div class="surface-200 h-10rem flex flex-column align-items-center justify-content-center">
       <img class="w-5rem border-circle" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="userimg">
       <p>Username</p>
     </div>
     <mat-list class="px-2">
       <div mat-subheader>Menu</div>
-      <mat-list-item class="border-round-3xl font-medium mb-2 surface-200" routerLink="/" (click)="drawer.close()">
+      <mat-list-item class="border-round-3xl font-medium h-3rem surface-200" routerLink="/" (click)="drawer.close()">
         <mat-icon mat-list-icon class="mr-1">home</mat-icon>Home
       </mat-list-item>
-      <mat-list-item class="border-round-3xl font-medium mb-2" routerLink="/" (click)="drawer.close()">
+      <mat-list-item class="border-round-3xl font-medium h-3rem" routerLink="/" (click)="drawer.close()">
         <mat-icon mat-list-icon class="mr-1">search</mat-icon>Search
       </mat-list-item>
-      <mat-list-item class="border-round-3xl font-medium mb-2" routerLink="/" (click)="drawer.close()">
-        <mat-icon mat-list-icon class="mr-1">help_outline</mat-icon>About
+      <mat-list-item class="border-round-3xl font-medium h-3rem" routerLink="/" (click)="drawer.close()">
+        <mat-icon mat-list-icon class="mr-1">help_outline</mat-icon>Help & Support
       </mat-list-item>
     </mat-list>
   </mat-drawer>
