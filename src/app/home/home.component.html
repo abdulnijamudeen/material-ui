@@ -1,4 +1,4 @@
-<mat-toolbar color="basic" div fxLayout="row" fxLayoutAlign="space-between center">
+<mat-toolbar class="bg-indigo-500 text-white sticky top-0 z-1" fxLayout="row" fxLayoutAlign="space-between center">
   <mat-icon (click)="toggle()" aria-hidden="false" aria-label="Example home icon" fontIcon="menu" style="padding-right: 1rem;"></mat-icon>
   <span>Home</span>
   <button mat-icon-button aria-label="Example icon-button with a menu">
@@ -6,7 +6,7 @@
   </button>
 </mat-toolbar>
 
-<mat-card class="m-3" fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of [0,1,2,3,4]">
+<mat-card class="m-3" fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of [0,1,2,3]">
   <mat-card-title>FCM client</mat-card-title>
   <mat-form-field class="example-form-field" appearance="outline" fxFill>
     <mat-label>To</mat-label>

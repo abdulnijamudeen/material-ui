@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.nizam.materialui',
-  appName: 'material-ui',
+  appName: 'Material Task',
   webDir: 'dist/material-ui',
   bundledWebRuntime: false,
   /* server: {
