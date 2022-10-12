@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { App } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
 import { SidemenuService } from 'src/app/service/sidemenu.service';
 
 @Component({
@@ -8,13 +10,17 @@ import { SidemenuService } from 'src/app/service/sidemenu.service';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor(private sidemenuService: SidemenuService) { }
+  routerActiveCss = 'bg-purple-500 border-3 border-purple-100 text-white';
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggle() {
-    this.sidemenuService.toggle();
+  onExitClick() {
+    if (Capacitor.getPlatform() === 'android' || Capacitor.getPlatform() === 'ios') {
+      App.exitApp()
+    }
   }
 
 }

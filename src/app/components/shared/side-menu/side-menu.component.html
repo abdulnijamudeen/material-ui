@@ -2,22 +2,29 @@
   <img class="w-5rem border-circle" src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png" alt="userimg">
   <p class="font-medium">Guest user</p>
 </div>
+
 <mat-list class="px-2">
   <div mat-subheader>Menu</div>
-  <mat-list-item class="border-round-3xl font-medium h-3rem"
-    routerLink="home" routerLinkActive="bg-purple-500 border-3 border-purple-100 text-white"
-    (click)="toggle()">
-    <mat-icon mat-list-icon class="mr-1">home</mat-icon>Home
-  </mat-list-item>
-  <mat-list-item class="border-round-3xl font-medium h-3rem"
-    routerLink="notes" routerLinkActive="bg-purple-500 border-3 border-purple-100 text-white"
-    (click)="toggle()">
+  <mat-list-item class="border-round-3xl font-medium h-3rem" matDrawerToggle routerLink="notes" [routerLinkActive]="routerActiveCss">
     <mat-icon mat-list-icon class="mr-1">notes</mat-icon>Notes
   </mat-list-item>
-  <mat-list-item class="border-round-3xl font-medium h-3rem" routerLink="/" (click)="toggle()">
+  <mat-list-item class="border-round-3xl font-medium h-3rem" matDrawerToggle routerLink="tags" [routerLinkActive]="routerActiveCss">
+    <mat-icon mat-list-icon class="mr-1">sell</mat-icon>Tags
+  </mat-list-item>
+  <mat-list-item class="border-round-3xl font-medium h-3rem" matDrawerToggle routerLink="/">
     <mat-icon mat-list-icon class="mr-1">search</mat-icon>Search
   </mat-list-item>
-  <mat-list-item class="border-round-3xl font-medium h-3rem" routerLink="/" (click)="toggle()">
+  <mat-list-item class="border-round-3xl font-medium h-3rem" matDrawerToggle routerLink="/">
     <mat-icon mat-list-icon class="mr-1">help_outline</mat-icon>Help & Support
+  </mat-list-item>
+</mat-list>
+
+<mat-list class="px-2">
+  <mat-divider></mat-divider>
+  <mat-list-item class="border-round-3xl font-medium h-3rem" matDrawerToggle>
+    <mat-icon mat-list-icon class="mr-1">logout</mat-icon>Logout
+  </mat-list-item>
+  <mat-list-item class="border-round-3xl font-medium h-3rem" matDrawerToggle (click)="onExitClick()">
+    <mat-icon mat-list-icon class="mr-1">exit_to_app</mat-icon>Exit
   </mat-list-item>
 </mat-list>

@@ -8,13 +8,9 @@ import { SidemenuService } from 'src/app/service/sidemenu.service';
 })
 export class NotesComponent implements OnInit {
 
-  constructor(private sidemenuService: SidemenuService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  toggle() {
-    this.sidemenuService.toggle();
   }
 
 }

@@ -1,25 +1,25 @@
+import { TagsComponent } from './components/tags/tags.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'notes',
     pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
   },
   {
     path: 'notes',
     component: NotesComponent
   },
   {
+    path: 'tags',
+    component: TagsComponent
+  },
+  {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'notes'
   }
 ];
 
