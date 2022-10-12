@@ -1,0 +1,11 @@
+<mat-toolbar class="bg-purple-500 text-white sticky top-0 z-1" fxLayout="row" fxLayoutAlign="space-between center">
+  <mat-icon (click)="toggle()" aria-hidden="false" aria-label="Example home icon" fontIcon="menu" style="padding-right: 1rem;"></mat-icon>
+  <span>Notes</span>
+  <button mat-icon-button aria-label="Example icon-button with a menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-card class="m-3" fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of [0,1,2,3]">
+  <mat-card-title>Notes</mat-card-title>
+</mat-card>

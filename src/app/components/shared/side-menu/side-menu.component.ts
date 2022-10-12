@@ -2,23 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { SidemenuService } from 'src/app/service/sidemenu.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-side-menu',
+  templateUrl: './side-menu.component.html',
+  styleUrls: ['./side-menu.component.scss']
 })
-export class HomeComponent implements OnInit {
-
-  to = '';
-  title = 'Dummy Title';
-  body = 'Dummy Message';
-  authKey = '';
+export class SideMenuComponent implements OnInit {
 
   constructor(private sidemenuService: SidemenuService) { }
 
   ngOnInit(): void {
-  }
-
-  send() {
   }
 
   toggle() {
