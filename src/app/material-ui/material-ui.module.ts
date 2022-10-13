@@ -12,6 +12,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const MATERIAL_UI = [
   MatCommonModule,
@@ -26,7 +27,8 @@ const MATERIAL_UI = [
   MatDialogModule,
   MatSnackBarModule,
   MatBadgeModule,
-  MatMenuModule
+  MatMenuModule,
+  MatTabsModule
 ]
 
 @NgModule({

@@ -16,6 +16,32 @@
   </mat-menu>
 </mat-toolbar>
 
-<mat-card class="m-3" fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of [0,1,2,3]">
-  <mat-card-title>Notes</mat-card-title>
-</mat-card>
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="pr-2">notes</mat-icon>
+      Notes
+    </ng-template>
+    <mat-card class="m-3" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card-title>Notes</mat-card-title>
+    </mat-card>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="pr-2">task_alt</mat-icon>
+      Completed
+    </ng-template>
+    <mat-card class="m-3" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card-title>Completed</mat-card-title>
+    </mat-card>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="pr-2">schedule</mat-icon>
+      Scheduled
+    </ng-template>
+    <mat-card class="m-3" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card-title>Scheduled</mat-card-title>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
